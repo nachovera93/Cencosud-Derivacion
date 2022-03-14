@@ -158,7 +158,7 @@ class ActionQuestion(Action):
         Querys(uniqueid)
         Updates(1,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid,rut)
         ConverterDate()
-        dispatcher.utter_message(f'{nombre} estamos llamando de SICC por encargo de cencosud para entregarle información especial para usted. ¿Desea comunicarse con un ejecutivo para saber más?') 
+        dispatcher.utter_message(f'{nombre}, estamos llamando de SICC por encargo de cencosud para entregarle información especial para usted. ¿Desea comunicarse con un ejecutivo para saber más?') 
         Updates(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
            
         return []
@@ -176,7 +176,7 @@ class ActionSiPaga(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         Querys(uniqueid)
-        dispatcher.utter_message(f"{primernombre} para una mejor atención, por favor ingrese su rut. si termina en K, reemplácelo por cero. | DER")
+        dispatcher.utter_message(f"{primernombre}, para una mejor atención por favor ingrese su rut. si termina en K, reemplácela por un cero. | DER")
        
         return []
 
@@ -196,7 +196,7 @@ class ActionNoPaga(Action):
         Querys(uniqueid)
         motivo = tracker.get_slot("razon")
         Updates(4,motivo,4,derivacion,fecha_com,"Si",uniqueid,rut)
-        dispatcher.utter_message(f"Muchas gracias por su tiempo. {primernombre}. Para más información puede ingresar a www.sicc.cl o llamando al 223658000 Que tenga un lindo dia! | EXIT")#{primernombre}
+        dispatcher.utter_message(f"Muchas gracias por su tiempo {primernombre}. Para más información puede ingresar a triple doble b punto sicc punto cl o llamando al 223658000. Que tenga un lindo día! | EXIT")#{primernombre}
         return []
 
 
@@ -276,7 +276,7 @@ class ActionSiConoce(Action):
         uniqueid = tracker.sender_id
         Querys(uniqueid)
         Updates(5,motivo,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid,rut)
-        dispatcher.utter_message(f'Podría comentarle que tenemos información importante y que nos puede encontrar en triple doble b .sic.cl o llamando al 223658000. Gracias | EXIT')
+        dispatcher.utter_message(f'Podría comentarle que tenemos información importante y que nos puede encontrar en triple doble b punto sic punto cl o llamando al 223658000. Gracias | EXIT')
         Updates(6,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
         return []
 
@@ -342,7 +342,7 @@ class ActionDonde(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         Querys(uniqueid)
-        dispatcher.utter_message(f'Nos estamos comunicando por encargo de Cevsa')
+        dispatcher.utter_message(f'Nos estamos comunicando de SICC por encargo de cencosud')
         return []
 
 class ActionDonde2(Action):
@@ -353,31 +353,11 @@ class ActionDonde2(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         Querys(uniqueid)
-        dispatcher.utter_message(f'Estamos llamando por encargo de Cevsa, podrá pagar dentro de los 3 proximos días?')
+        dispatcher.utter_message(f'Estamos llamando de SICC por encargo de cencosud , podrá pagar dentro de los 3 proximos días?')
         return []
 
-class ActionMonto(Action):
-    def name(self):
-        return "action_monto"
 
-    def run(self, dispatcher, tracker, domain):
-        global uniqueid
-        uniqueid = tracker.sender_id
-        #progreso(2,razon,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
-        Querys(uniqueid)
-        dispatcher.utter_message(f'El monto adeudado es de {monto} pesos, con oferta de {oferta}. Podrá pagar dentro de los 3 proximos días?')
-        return []
 
-class FechaVencimiento(Action):
-    def name(self):
-        return "action_fecha"
-
-    def run(self, dispatcher, tracker, domain):
-        global uniqueid
-        uniqueid = tracker.sender_id
-        Querys(uniqueid)
-        dispatcher.utter_message(f'La fecha sería el {dia} de {nombreMes} del {anio}, osea dentro de 3 días. Cree que podría cancelar?')
-        return []
 
 
 ######################################

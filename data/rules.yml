@@ -105,12 +105,6 @@ rules:
       - action: action_no_paga
 
 
-  - rule: me repite 10
-    steps:
-      - action: action_monto
-      - intent: me_repite
-      - action: action_monto
-
   - rule: me repite 11
     steps:
       - action: action_hello2
@@ -142,24 +136,6 @@ rules:
       - intent: me_repite
       - action: action_donde2
 
-  - rule: me repite 14
-    steps:
-      - action: action_fecha
-      - intent: me_repite
-      - action: action_fecha
-
-
-
-  - rule: pregunta fecha
-    steps:
-      - intent: que_fecha
-      - action: action_fecha
-
-
-  - rule: pregunta monto
-    steps:
-      - intent: preguntar_monto
-      - action: action_monto
 
   - rule: donde 1
     steps:
