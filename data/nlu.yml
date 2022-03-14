@@ -105,6 +105,7 @@ nlu:
     - te dije que [no](respuesta)
     - te dije que [nooo](respuesta)
     - la verdad es que [no](respuesta)
+    - [no](respuesta) esta acá
 - intent: saludos
   examples: |
     - hola
@@ -190,6 +191,11 @@ nlu:
 
 - intent: out_of_scope
   examples: |
+    - cuanto
+    - cuando
+    - que fecha
+    - que dia
+    - monto
     - yo creo
     - ah ya
     - ya
@@ -228,29 +234,6 @@ nlu:
     - con quien
 
     
-
-- intent: preguntar_monto
-  examples: |
-    - perdon cuanto?
-    - me repite el monto porfavor?
-    - disculpa, cuanta plata?
-    - cuanto es el monto?
-    - y cuanto erá?
-    - y cuanta plata erá?
-    - disculpa cual era el monto?
-    - cuanto
-    - monto
-- intent: que_fecha
-  examples: |
-    - cuando disculpa?
-    - me repite la fecha porfavor?
-    - cual era la fecha?
-    - que dia?
-    - que fecha erá?
-    - que día erá?
-    - disculpa cual era la fecha?
-    - fecha
-    - cuando
 - intent: de_donde
   examples: |
     - donde?
@@ -261,12 +244,4 @@ nlu:
     - de que parte?
     - de que parte llama?
     - de que parte es esto?
-
-- intent: que_hora_es
-  examples: |
-    - que hora es
-    - dame la hora porfavor
-    - cual es el horario
-    - hora porfavor
-    - dime hora
 

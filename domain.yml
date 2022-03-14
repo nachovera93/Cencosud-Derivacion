@@ -27,6 +27,7 @@ intents:
 - space
 - start
 - inicio
+- que_hora_es
 entities:
 - cesante
 - enfermo
@@ -70,7 +71,7 @@ responses:
   utter_despedida:
   - text: Muchas gracias por su tiempo, adiós | EXIT
   utter_bot:
-  - text: Soy un asistente virtual.
+  - text: Estamos llamando de sic por encargo de cencosud y soy un asistente virtual.
 actions:
 - action_ask_question
 - action_ask_question2

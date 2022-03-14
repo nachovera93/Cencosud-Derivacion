@@ -353,7 +353,7 @@ class ActionDonde2(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         Querys(uniqueid)
-        dispatcher.utter_message(f'Estamos llamando de SICC por encargo de cencosud , podrá pagar dentro de los 3 proximos días?')
+        dispatcher.utter_message(f'Estamos llamando de SICC por encargo de cencosud')
         return []
 
 
